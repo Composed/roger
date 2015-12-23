@@ -9,8 +9,7 @@ packages:
 jobs:
   roger:
     builder: "golang"
-    base: "ubuntu:12.04"
-    software_groups: *software
+    base: "quay.io/madebymany/build-bases:trusty"
     packages:
       - type: debian
         name: roger
@@ -18,6 +17,6 @@ jobs:
           - libc6
         target: install
         repos:
-          - mxm-public
+          - composed-public
         activates:
           - roger-upgrade
